@@ -118,9 +118,10 @@
         });
 
       let docs = await getDocs(collection(db, "albums"));
+      
       docs.forEach((doc) => {
         let row = doc.data();
-        
+
         let image = row['image'];
         let title = row['title'];
         let content = row['content'];
