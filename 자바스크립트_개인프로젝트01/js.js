@@ -5,7 +5,7 @@ const options = {
     accept: "application/json",
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNTZkNzY2ODk0YjY1NmIwNDViNzQwN2IyMGNmNzhkNyIsIm5iZiI6MTcyMTgyODg4Mi44NTY5Miwic3ViIjoiNjZhMGE1ZGJlMzJlODk2ZDY2NTI5YTk2Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.Jm1wUL6Y1DPltUVJxaauMwtTvqzPfvi6xVV0QnMiW64",
-  },
+  }, 
 };
 
 //데이터
