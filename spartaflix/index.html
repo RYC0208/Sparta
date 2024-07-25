@@ -110,15 +110,15 @@
           $("#temperature").text(temp);
         });
 
-        let docs = await getDocs(collection(db, "movies"));
-      
+      let docs = await getDocs(collection(db, "movies"));
+
       docs.forEach((doc) => {
         let row = doc.data();
 
-        let image = row['image'];
-        let title = row['title'];
-        let content = row['content'];
-        let stars = row['stars'];
+        let image = row["image"];
+        let title = row["title"];
+        let content = row["content"];
+        let stars = row["stars"];
 
         let temp_html = `
           <div class="col">
@@ -137,9 +137,7 @@
         </div>
           `;
         $("#card").append(temp_html);
-        
       });
-
     </script>
   </head>
   <body>
@@ -252,8 +250,7 @@
     </div>
 
     <div class="mycards">
-      <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
-      </div>
+      <div id="card" class="row row-cols-1 row-cols-md-4 g-4"></div>
     </div>
   </body>
 </html>

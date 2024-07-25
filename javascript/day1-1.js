@@ -123,8 +123,8 @@ x *= 5;
 
 function 더하기하는함수(a, b){
 
-    const c = a+b;
- return c;
+
+ return a+b;
 }
 
 console.log(더하기하는함수(1, 2));
