@@ -15,14 +15,14 @@ function MoviesData() {
     "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
     options
   )
-  .then((response) => response.json())
-  .then((response) => {
-    //응답된 데이터 담아주기
-    console.log(response)
-    const Movies = response.results;
-    SearchMovie(Movies);
-  })
-  .catch((err) => console.error(err));
+    .then((response) => response.json())
+    .then((response) => {
+      //응답된 데이터 담아주기
+      console.log(response);
+      const Movies = response.results;
+      SearchMovie(Movies);
+    })
+    .catch((err) => console.error(err));
 }
 
 //검색 이벤트
@@ -63,20 +63,22 @@ const CreateList = (filteredMovies) => {
   const movieListArea = document.getElementById("card"); //영화 리스트를 뿌려줄 곳
   movieListArea.innerHTML = "";
 
-  if (filteredMovies != null && filteredMovies != "") {
-    filteredMovies.forEach((filteredmovie) => {
-      const listItem = document.createElement("div");
-      listItem.id = "moviesContainer"; // div id 값을 설정
-      listItem.className = "cards"; // div 클래스 값을 설정
+  filteredMovies.forEach((filteredmovie) => {
+    const listItem = document.createElement("div");
+    listItem.id = "moviesContainer"; // div id 값을 설정
+    listItem.className = "cards"; // div 클래스 값을 설정
 
-      const overview = substringOverview(filteredmovie["overview"], 35);
+    const overview = substringOverview(filteredmovie["overview"], 35);
 
-
-      // '를 이스케이프 처리하여 replace함수를 사용해 백슬래시(\)로 '를 넣어주어서 완벽한 문자열로 대체해줌
-      listItem.innerHTML = `
-                <div class="card h-100" onclick="MoiveId( ${filteredmovie["id"]}, '${filteredmovie["name"].replace("'", "\\'")}')">
+    // '를 이스케이프 처리하여 replace함수를 사용해 백슬래시(\)로 '를 넣어주어서 완벽한 문자열로 대체해줌
+    listItem.innerHTML = `
+                <div class="card h-100" onclick="MoiveId( ${
+                  filteredmovie["id"]
+                }, '${filteredmovie["name"].replace("'", "\\'")}')">
                   <img
-                  src="https://image.tmdb.org/t/p/w500${filteredmovie["poster_path"]}"
+                  src="https://image.tmdb.org/t/p/w500${
+                    filteredmovie["poster_path"]
+                  }"
                   class="card-img-top"
                   alt="..."
                   />
@@ -86,18 +88,17 @@ const CreateList = (filteredMovies) => {
                   <p class="card-text">${overview}</p>
                 </div>
             `;
-      movieListArea.appendChild(listItem);
-    });
-  } 
+    movieListArea.appendChild(listItem);
+  });
   // else {
   //   alert("검색 결과가 없습니다");
   //   window.location.reload();
   // }
-  };
+};
 
-  const MoiveId = (movieId, movieName) =>{
-    alert(movieName + "의 id 값은 : " + movieId);
-  }
+const MoiveId = (movieId, movieName) => {
+  alert(movieName + "의 id 값은 : " + movieId);
+};
 
-  //검색창 기본 커서
-  document.getElementById('searchInput').focus();
+//검색창 기본 커서
+document.getElementById("searchInput").focus();
