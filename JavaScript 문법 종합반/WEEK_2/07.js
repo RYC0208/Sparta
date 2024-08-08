@@ -18,7 +18,6 @@ const multiplyByThree = multiplyBy(3);
 console.log(multiplyByTwo(10));
 console.log(multiplyByThree(10));
 
-
 const result = add(multiplyByTwo(5), multiplyByThree(10));
 
 console.log(`FINAL => ${result}`);
