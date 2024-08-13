@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<script>
+	function Result(){
+		let people = [
+			{ name : "서영" , weight : 58 },
+			{ name : "현아" , weight : 60 },
+			{ name : "영환" , weight : 78 },
+			{ name : "서연" , weight : 53 },
+			{ name : "지용" , weight : 83 },
+			{ name : "예지" , weight : 72 }
+		];
+		console.log(people);
+
+		$("#peopleList").empty();
+
+		people.forEach((a)=>{
+			let name = a['name'];
+			let weight = a['weight'];
+			let temp_html = `<p>${name}의 몸무게는 ${weight}kg입니다.</p>`;
+			$('#peopleList').append(temp_html);
+		});
+    
+	}
+</script>
+<body>
+    <button onclick="Result()">결과 확인하기!</button>
+    <div id="peopleList">
+    </div>
+</body>
+</html>
