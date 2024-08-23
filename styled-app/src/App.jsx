@@ -1,4 +1,3 @@
-
 /*
   useContext
   컴포넌트 상태를 뛰어넘는 개념인 useContext에 대해 배움
@@ -24,15 +23,14 @@
   useContext를 사용하고 있는 모든 컴포넌트가 리렌더링 됨
 
 */
-import React from 'react'
-import GrandFather from './components/GrandFather'
+import React from "react";
+import GrandFather from "./components/GrandFather";
 const App = () => {
   return (
     <div>
       <GrandFather />
     </div>
+  );
+};
 
-)
-}
-
-export default App
+export default App;
